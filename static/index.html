@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" href="/static/indexStyle.css">
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <title>News</title>
+</head>
+<body>
+    <div class="mainBody" id="body1">
+        <div class="grid-container-head1">
+            <! the first div is used to take up space such that grid system still divide head to three parts >
+            <div></div>
+            <! the second div is for vertical search buttons. It will not take up space since it uses 'fixed' position >
+            <div class="btn-group">
+                <button  class="btn" id="btn1" onmouseover="changeClr(this)" onmouseout="returnClr(this)">Google News</button>
+                <button  class="btn" id="btn2" onmouseover="changeClr(this)" onmouseout="returnClr(this)" onclick="display(2)">Search</button>
+            </div>
+            <! this div is for carousel >
+            <div id="carousel">
+                <div>
+                    <a id="carousel-link" target="_blank">
+                        <div class="img-group">
+                           <img id="carousel-img">
+                           <div class="img-word">
+                               <h3><b></b></h3>
+                               <div>
+                                   <p></p>
+                               </div>
+                           </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div></div>
+            <div id="wordCloud"></div>
+        </div>
+        <div class="grid-container-news">
+            <div></div>
+            <div>
+                <table class="news-table">
+                    <tr>
+                        <th colspan="4"><b>CNN</b><hr></th>
+                    </tr>
+                    <tr>
+                        <td class="card-td">
+                            <a class="cnn-link" target="_blank">
+                                <div class="card-cnn">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b></b></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="cnn-link" target="_blank">
+                                <div class="card-cnn">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b></b></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="cnn-link" target="_blank">
+                                <div class="card-cnn">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="cnn-link" target="_blank">
+                                <div class="card-cnn">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="grid-container-news">
+            <div></div>
+            <div>
+                <table class="news-table">
+                    <tr>
+                        <th colspan="4"><b>FOX</b><hr></th>
+                    </tr>
+                    <tr>
+                        <td class="card-td">
+                            <a class="fox-link" target="_blank">
+                                <div class="card-fox">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                 </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="fox-link" target="_blank">
+                                <div class="card-fox">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                 </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="fox-link" target="_blank">
+                                <div class="card-fox">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                 </div>
+                            </a>
+                        </td>
+                        <td class="card-td">
+                            <a class="fox-link" target="_blank">
+                                <div class="card-fox">
+                                    <img src="">
+                                    <div class="container">
+                                        <h4><b>P1</b></h4>
+                                        <p></p>
+                                    </div>
+                                 </div>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="mainBody" id="body2">
+        <div class="grid-container-head2">
+            <div style="text-align:center">
+                <div class="btn-group">
+                    <button class="btn" id="btn3" onclick="display(1)" onmouseover="changeClr(this)" onmouseout="returnClr(this)">Google News</button>
+                    <button class="btn" id="btn4" onmouseover="changeClr(this)" onmouseout="returnClr(this)">Search</button>
+                </div>
+            </div>
+            <div id="form">
+                <form action="javascript: uploadData()">
+                    <div class="form-div">
+                        <label for="keyword">Keyword<span class="star">*</span></label>
+                        <input type="text" name="keyword" id="keyword" required>
+                        <label for="start-time">From<span class="star">*</span></label>
+                        <input type="date" name="start-time" required class="date" id="start-time">
+                        <label for="end-time">To<span class="star">*</span></label>
+                        <input type="date" name="end-time" required class="date" id="end-time"><br/>
+                    </div>
+                    <div class="form-div-mid">
+                        <label for="category">Category</label>
+                        <select name="category" id="select-cat" onchange="updateSrc()">
+                            <option selected="selected" value="All">All</option>
+                            <option>Business</option>
+                            <option>Entertainment</option>
+                            <option>General</option>
+                            <option>Health</option>
+                            <option>Science</option>
+                            <option>Sports</option>
+                            <option>Technology</option>
+                        </select>
+                        <label for="source">Source</label>
+                        <select name="source" id="select-src">
+                            <option value="all">All</option>
+                        </select><br/>
+                    </div>
+                    <div class="form-div">
+                        <button type="submit" class="form-btn">Search</button>
+                        <button type="reset" class="form-btn" onclick="clearContent()">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="grid-container-body2">
+            <div></div>
+            <div id="card-body">
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <script src="/static/func.js" type="text/javascript"></script>
+    <script src="/static/wordCloud.js" type="text/javascript"></script>
+</body>
+</html>

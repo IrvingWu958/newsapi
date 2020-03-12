@@ -1,0 +1,363 @@
+/*======================================= Shared.css =======================================*/
+html, body {
+    height: 1500px;
+}
+
+td {
+    vertical-align: top;
+    height: 600px;
+}
+
+table {
+    width: 100%;
+}
+
+h3 b{
+    word-wrap: break-word;
+}
+
+h3 {
+    width: 482px;
+    margin-top: 0;
+    word-wrap: break-word;
+}
+.mainBody {
+    width: 1120px;
+    height: 1500px;
+    margin: 30px auto;
+}
+
+.btn-group {
+    position: fixed;
+}
+
+.btn-group .btn {
+    margin: 0;
+    border: none ;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 170px;
+    display: block;
+    white-space: nowrap;
+    font-family: Georgia;
+}
+
+.btn-group .btn:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+#btn3 {
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+}
+
+#btn4 {
+    border-bottom-right-radius:5px ;
+    border-bottom-left-radius:5px ;
+}
+
+/*====================================== Body1.css =====================================*/
+
+#body1 {
+    text-align: center;
+    grid-template-rows: 300px 600px 600px;
+}
+
+/* news head part*/
+.grid-container-head1 {
+    display: grid;
+    grid-template-columns: 235px  500px  20px auto 30px;
+}
+
+#btn1 {
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+}
+
+#btn2 {
+    border-bottom-right-radius:5px ;
+    border-bottom-left-radius:5px ;
+}
+
+/* for making words display on images */
+.img-group {
+    position: relative;
+    display: inline-block;
+    width: 500px;
+    height: 300px;
+}
+
+.img-word {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 60%;
+    background-color:rgba(0,0,0,0.4);
+}
+
+.img-word h3 {
+    margin: 10px 5px 15px 5px;
+}
+
+.img-word div {
+    margin: 0 10px;
+}
+
+/*set the size of images of carousel*/
+#carousel-img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+#carousel {
+    width: 500px;
+    height: 300px;
+}
+
+/* set word cloud's background color and height */
+#wordCloud {
+    background-color: #e9f2eb;
+    height: 300px;
+}
+
+/* news body part*/
+.grid-container-news {
+    display: grid;
+    grid-template-columns: 190px auto;
+}
+
+.news-table {
+    margin: 30px 0 15px 0;
+}
+
+th {
+    font-size: x-large;
+}
+
+/*the design of cnn and fox news card*/
+.card-cnn, .card-fox {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 215px;
+    height: 100%;
+    display: inline-table;
+    border: none;
+    background-color: #ededed;
+
+}
+
+.card-cnn img, .card-fox img {
+    width: 215px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin: 20px 10px;
+}
+
+.card-td {
+    width: 210px;
+    height: 560px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.card-td a {
+    color: black;
+}
+
+hr {
+    border: 1px dashed black;
+}
+
+/*============================================ Body2.css ===========================================*/
+
+/*search form*/
+.grid-container-head2 {
+    display: grid;
+    grid-template-columns: 250px 800px auto;
+}
+
+.star {
+    color: red;
+}
+
+#form {
+    text-align: center;
+    background-color: #e0e0d5;
+}
+
+.form-div {
+    padding: 20px 3px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.form-div-mid {
+    padding: 0 3px;
+}
+
+.form-btn {
+    border: none;
+    height: 20px;
+    background-color: #e0e0d5;
+    font-family: "Times New Roman";
+}
+
+.form-btn:hover {
+    background-color: darkseagreen;
+}
+
+label {
+    margin-right: 15px;
+}
+
+input {
+    margin-right: 15px;
+    border: 0px;
+    height: 23px;
+    vertical-align: top; /*make all buttons in a horizontal line*/
+    border-radius: 3px;
+}
+
+select {
+    margin-right: 15px;
+    text-align: center;
+}
+
+button {
+    margin-right: 10px;
+}
+
+/* returned searching results part */
+.grid-container-body2 {
+    display: grid;
+    grid-template-columns: 300px 700px auto;
+    margin-top: 25px;
+}
+
+.pic {
+    width: 80px;
+    height: 80px;
+    float: left;
+    object-fit: cover; /* make image display normal */
+    padding: 25px 17px 25px 25px;
+}
+
+/* this one is for cards showing brief information*/
+.intro1 {
+    float: right;
+    width: 520px;
+    padding-top: 25px;
+    padding-right: 28px;
+}
+
+.intro1 h3 {
+    margin-bottom: 15px;
+}
+
+/* this one is for cards showing more details after clicking the introduction card*/
+.intro2 {
+    float: right;
+    width: 520px;
+    padding-top: 25px;
+    padding-right: 25px;
+}
+
+.intro2 p {
+    margin: 4px 0;
+    word-break: normal;
+}
+
+.intro2 h3 {
+    margin-bottom: 4px;
+}
+
+.intro2 div {
+    margin-bottom: 20px;
+}
+
+/* design the introduction card */
+.card-ele {
+    width: 700px;
+    height: 130px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-bottom: 13px;
+    background-color: #cccccc;
+    display: grid;
+    grid-template-columns: 135px 540px auto;
+}
+
+.card-ele:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+#card-body button {
+    margin-left: 40%;
+}
+
+#card-body {
+    margin-bottom: 30px;
+}
+
+#time-sign div{
+    padding-top: 20px;
+    margin-right: 20px;
+    color: black;
+    font-size: x-large;
+}
+
+#time-sign div:hover {
+    cursor: pointer;
+}
+
+.card-detail {
+    width: 700px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-bottom: 13px;
+    background-color: #cccccc;
+    display: grid;
+    grid-template-columns: 135px 530px auto;
+}
+
+.showBtn {
+    background-color: #cccccc;
+    margin: 0 300px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    width: 120px;
+    height: 50px;
+    font-family: Georgia;
+}
+
+.showBtn:hover {
+    background-color: darkseagreen;
+}
